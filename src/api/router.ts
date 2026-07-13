@@ -10,6 +10,7 @@ import listaHostingRoutes from "./listahosting/listaHosting.routes";
 import registrosFaltantesRoutes from "./registrosfaltantes/registroFaltante.routes";
 import reporteGuardiaRoutes from "./reporteguardia/reporteGuardia.routes";
 import seguridadRoutes from "./seguridad/seguridad.routes";
+import controlLlavesRoutes from "./controlllaves/controlLlaves.routes";
 
 const router = express.Router();
 
@@ -66,6 +67,9 @@ router.use("/RegistrosFaltantes", registrosFaltantesRoutes);
 
 router.use("/seguridad", seguridadRoutes);
 router.use("/Seguridad", seguridadRoutes);
+
+router.use("/control-llaves", controlLlavesRoutes);
+router.use("/ControlLlaves", controlLlavesRoutes);
 
 router.get("/ping", (req, res) => {
   res.status(200).send("ok");
