@@ -3,3 +3,4 @@ dist
 .env
 tmp
 firebase-service.json
+nyxhotelcancun-firebase-adminsdk-fbsvc-*.json
