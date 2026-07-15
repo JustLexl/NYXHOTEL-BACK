@@ -11,6 +11,8 @@ import registrosFaltantesRoutes from "./registrosfaltantes/registroFaltante.rout
 import reporteGuardiaRoutes from "./reporteguardia/reporteGuardia.routes";
 import seguridadRoutes from "./seguridad/seguridad.routes";
 import controlLlavesRoutes from "./controlllaves/controlLlaves.routes";
+import lostAndFoundRoutes from "./lostandfound/lostAndFound.routes";
+
 
 const router = express.Router();
 
@@ -70,6 +72,10 @@ router.use("/Seguridad", seguridadRoutes);
 
 router.use("/control-llaves", controlLlavesRoutes);
 router.use("/ControlLlaves", controlLlavesRoutes);
+
+router.use("/lost-and-found", lostAndFoundRoutes);
+router.use("/LostAndFound", lostAndFoundRoutes);
+
 
 router.get("/ping", (req, res) => {
   res.status(200).send("ok");
