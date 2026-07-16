@@ -12,6 +12,7 @@ import reporteGuardiaRoutes from "./reporteguardia/reporteGuardia.routes";
 import seguridadRoutes from "./seguridad/seguridad.routes";
 import controlLlavesRoutes from "./controlllaves/controlLlaves.routes";
 import lostAndFoundRoutes from "./lostandfound/lostAndFound.routes";
+import registroProveedoresRoutes from "./registro-proveedores/registroProveedores.routes";
 
 
 const router = express.Router();
@@ -75,6 +76,9 @@ router.use("/ControlLlaves", controlLlavesRoutes);
 
 router.use("/lost-and-found", lostAndFoundRoutes);
 router.use("/LostAndFound", lostAndFoundRoutes);
+
+router.use("/registro-proveedores", registroProveedoresRoutes);
+router.use("/RegistroProveedores", registroProveedoresRoutes);
 
 
 router.get("/ping", (req, res) => {
