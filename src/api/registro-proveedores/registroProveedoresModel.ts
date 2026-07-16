@@ -27,6 +27,19 @@ export async function getAllRegistroProveedoresMongo() {
   }
 }
 
+export async function updateRegistroProveedorMongo(id: string, record: Partial<RegistroProveedoresDto>) {
+  try {
+    const db = await connect();
+    const dbRef = db.collection<RegistroProveedoresDto>(COLLECTION);
+    return await dbRef.updateOne(
+      { _id: getMongoId(id) },
+      { $set: { ...record, updatedAt: new Date() } }
+    );
+  } catch (error) {
+    throw new BaseError("Inside catch: ", error, "updateRegistroProveedorMongo");
+  }
+}
+
 export async function registrarSalidaProveedorMongo(id: string, horaSalida: string, fechaSalida: string) {
   try {
     const db = await connect();

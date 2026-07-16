@@ -28,6 +28,20 @@ export async function createRegistroProveedorController(
   }
 }
 
+export async function updateRegistroProveedorController(
+  req: express.Request,
+  res: express.Response,
+  next: NextFunction
+) {
+  try {
+    const id = req.params.id;
+    const response = await service.updateRegistroProveedor(id, req.body);
+    res.status(HttpStatusCode.OK).json({ success: true, data: response });
+  } catch (error) {
+    next(error);
+  }
+}
+
 export async function registrarSalidaProveedorController(
   req: express.Request,
   res: express.Response,

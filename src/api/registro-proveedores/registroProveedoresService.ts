@@ -25,6 +25,15 @@ export async function getRegistroProveedores() {
   }
 }
 
+export async function updateRegistroProveedor(id: string, record: Partial<RegistroProveedoresDto>) {
+  try {
+    await model.updateRegistroProveedorMongo(id, record);
+    return true;
+  } catch (error) {
+    throw new BaseError("Inside catch: ", error, "updateRegistroProveedor");
+  }
+}
+
 export async function registrarSalidaProveedor(id: string) {
   try {
     const now = new Date();
