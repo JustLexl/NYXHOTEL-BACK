@@ -13,6 +13,7 @@ import seguridadRoutes from "./seguridad/seguridad.routes";
 import controlLlavesRoutes from "./controlllaves/controlLlaves.routes";
 import lostAndFoundRoutes from "./lostandfound/lostAndFound.routes";
 import registroProveedoresRoutes from "./registro-proveedores/registroProveedores.routes";
+import calidadRoutes from "./calidad/calidad.routes";
 
 
 const router = express.Router();
@@ -79,6 +80,9 @@ router.use("/LostAndFound", lostAndFoundRoutes);
 
 router.use("/registro-proveedores", registroProveedoresRoutes);
 router.use("/RegistroProveedores", registroProveedoresRoutes);
+
+router.use("/calidad", calidadRoutes);
+router.use("/Calidad", calidadRoutes);
 
 
 router.get("/ping", (req, res) => {
