@@ -24,6 +24,7 @@ export interface LostAndFoundDto {
   firmaReclama?: string; // Base64 png representation de la firma del huésped
 
   isDeleted?: boolean;
+  fotos?: string[];
   createdAt?: Date;
   updatedAt?: Date;
 }
