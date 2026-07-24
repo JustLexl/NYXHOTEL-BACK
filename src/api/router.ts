@@ -16,6 +16,7 @@ import registroProveedoresRoutes from "./registro-proveedores/registroProveedore
 import calidadRoutes from "./calidad/calidad.routes";
 import cuentasRoutes from "./cuentas/cuentas.routes";
 import distintivoHRoutes from "./distintivoh/distintivoH.routes";
+import inventarioRoutes from "./inventario/inventario.routes";
 
 
 const router = express.Router();
@@ -93,6 +94,10 @@ router.use("/GestionCuentas", cuentasRoutes);
 
 router.use("/distintivo-h", distintivoHRoutes);
 router.use("/DistintivoH", distintivoHRoutes);
+
+router.use("/inventario", inventarioRoutes);
+router.use("/Inventario", inventarioRoutes);
+router.use("/InventarioNyx", inventarioRoutes);
 
 
 router.get("/ping", (req, res) => {
